@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import _isEmpty from 'lodash/isEmpty'
+import uuid from 'uuid'
 
 import './style.css'
 
@@ -11,6 +12,16 @@ class Modal extends Component {
       name: '',
       startTime: '0',
       endTime: '23',
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if(!prevProps.event && this.props.event) {
+      this.setState({
+        name: this.props.event.name,
+        startTime: this.props.event.startTime,
+        endTime: this.props.event.endTime,
+      })
     }
   }
 
@@ -29,13 +40,34 @@ class Modal extends Component {
     )
   }
 
-  onCancel(e) {
+  closeModal() {
     this.props.modalToggle()
     this.setState({
       name: '',
       startTime: '0',
       endTime: '23',
     })
+  }
+
+  onCancel() {
+    this.closeModal()
+  }
+
+  onSave() {
+    const newEvent = Object.assign({}, this.state, {eventId: uuid()})
+    this.props.saveEvent(this.props.dayId, newEvent)
+    this.closeModal()
+  }
+
+  onUpdate() {
+    const newEvent = Object.assign({}, this.state, {eventId: uuid()})
+    this.props.updateEvent(this.props.dayId, this.props.eventId, newEvent)
+    this.closeModal()
+  }
+
+  onDelete() {
+    this.props.deleteEvent(this.props.dayId, this.props.eventId)
+    this.closeModal()
   }
 
   render() {
@@ -55,7 +87,9 @@ class Modal extends Component {
           <input id='endTime' type='number' value={this.state.endTime} onChange={this.update('endTime')} min={this.state.startTime || 1} max={23}/>
         </section>
         <section>
-          <button disabled={this.validate()}>Save</button>
+          <button className={classNames({hidden: this.props.eventId})} onClick={() => this.onSave()} disabled={this.validate()}>Save</button>
+          <button className={classNames({hidden: !this.props.eventId})} onClick={() => this.onUpdate()} disabled={this.validate()}>Update</button>
+          <button className={classNames({hidden: !this.props.eventId})} onClick={() => this.onDelete()} disabled={this.validate()}>Delete</button>
           <button onClick={() => this.onCancel()}>Cancel</button>
         </section>
       </div>

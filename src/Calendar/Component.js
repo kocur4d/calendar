@@ -18,7 +18,7 @@ const Calendar = ({
     <p>Saturday</p>
     <p>Sunday</p>
     {
-      _map(days, (day) => <Day key={day.id} {...day}/>)
+      _map(days, (day) => <Day key={day.dayId} {...day}/>)
     }
   </div>
 )
