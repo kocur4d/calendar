@@ -6,7 +6,8 @@ import Day from './Day'
 import './style.css'
 
 const Calendar = ({
-  days
+  days,
+  modalToggle,
 }) => (
   <div className='calendar'>
     <p>Monday</p>
@@ -17,7 +18,7 @@ const Calendar = ({
     <p>Saturday</p>
     <p>Sunday</p>
     {
-      _map(days, (day) => <Day key={day.id} {...day} />)
+      _map(days, (day) => <Day key={day.id} {...day}/>)
     }
   </div>
 )
