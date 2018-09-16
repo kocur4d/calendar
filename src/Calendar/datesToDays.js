@@ -8,7 +8,7 @@ export const datesToDays = (dates, currentDate = new Date()) => _map(
   date => ({
     id: dateId(date),
     dayOfWeek: date.getDay(),
-    day: date.getDate(),
+    date: date.getDate(),
     isInPast: isInPast(date)
   })
 ) 

@@ -1,14 +1,16 @@
 import React from 'react'
+import classNames from 'classnames'
+
+import Date from './Date'
 
 import './style.css'
 
 const Day = ({
-  id,
+  date,
   isInPast,
 }) => (
-  <div className='day'>
-    <p>{id}</p>
-    <p>{isInPast && 'YES'}</p>
+  <div className={classNames('day', {'inpast': isInPast})}>
+    <Date date={date} isInPast={isInPast} />
   </div>
 )
 

@@ -1,6 +1,9 @@
 .day {
+  display: flex;
+  flex-direction: column;
   border-top: 1px solid black;
-  border-left: 1px solid black; }
+  border-left: 1px solid black;
+  background: white; }
   .day:nth-last-child(-n+7) {
     border-bottom: 1px solid black; }
   .day:nth-child(7n) {
