@@ -2,11 +2,13 @@
   "name": "calendar",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kocur4d.github.io/calendar",
   "dependencies": {
     "chai": "^4.1.2",
     "classnames": "^2.2.6",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "gh-pages": "^2.0.0",
     "immutable": "^3.8.2",
     "lodash": "^4.17.11",
     "node-sass-chokidar": "^1.3.3",
@@ -22,6 +24,8 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
