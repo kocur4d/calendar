@@ -26,16 +26,16 @@ I didn't have enough time to provide a full test coverage. I picked few places t
 I would normally spend more time on it to produce better test coverage.
 
 ## Components
-[<Day />](https://github.com/kocur4d/calendar/blob/master/src/Calendar/Day/Component.spec.js)
-[<Date />](https://github.com/kocur4d/calendar/blob/master/src/Calendar/Day/Date/Component.spec.js)
+* [<Day />](https://github.com/kocur4d/calendar/blob/master/src/Calendar/Day/Component.spec.js)
+* [<Date />](https://github.com/kocur4d/calendar/blob/master/src/Calendar/Day/Date/Component.spec.js)
 ## Reducers
-[events reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Events/index.spec.js)
-[modal dayId reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Modal/dayId.spec.js)
-[modal eventId reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Modal/eventId.spec.js)
-[modal visible reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Modal/visible.spec.js)
+* [events reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Events/index.spec.js)
+* [modal dayId reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Modal/dayId.spec.js)
+* [modal eventId reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Modal/eventId.spec.js)
+* [modal visible reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Modal/visible.spec.js)
 ## Vanila JS libs
-[lib/date](https://github.com/kocur4d/calendar/blob/master/src/lib/date.spec.js)
-[dates to date](https://github.com/kocur4d/calendar/blob/master/src/Calendar/datesToDays.spec.js)
+* [lib/date](https://github.com/kocur4d/calendar/blob/master/src/lib/date.spec.js)
+* [dates to date](https://github.com/kocur4d/calendar/blob/master/src/Calendar/datesToDays.spec.js)
 
 # Things that are missing
 
