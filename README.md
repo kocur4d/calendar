@@ -26,8 +26,8 @@ I didn't have enough time to provide a full test coverage. I picked few places t
 I would normally spend more time on it to produce better test coverage.
 
 ## Components
-* [<Day />](https://github.com/kocur4d/calendar/blob/master/src/Calendar/Day/Component.spec.js)
-* [<Date />](https://github.com/kocur4d/calendar/blob/master/src/Calendar/Day/Date/Component.spec.js)
+* [Day component](https://github.com/kocur4d/calendar/blob/master/src/Calendar/Day/Component.spec.js)
+* [Date component](https://github.com/kocur4d/calendar/blob/master/src/Calendar/Day/Date/Component.spec.js)
 ## Reducers
 * [events reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Events/index.spec.js)
 * [modal dayId reducer](https://github.com/kocur4d/calendar/blob/master/src/reducers/Modal/dayId.spec.js)
