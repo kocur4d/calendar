@@ -5,6 +5,7 @@
 ```
 git clone git@github.com:kocur4d/calendar.git
 cd calendar
+yarn install
 yarn start
 ```
 Running tests
