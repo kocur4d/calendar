@@ -1,3 +1,6 @@
+# Live demo
+[https://kocur4d.github.io/calendar/](https://kocur4d.github.io/calendar/)
+
 # Development
 ```
 git clone git@github.com:kocur4d/calendar.git
