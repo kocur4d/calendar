@@ -6,9 +6,9 @@ const isInPast = (date) => new Date() - date <= 0 ? false : true
 export const datesToDays = (dates, currentDate = new Date()) => _map(
   dates,
   date => ({
-    id: dateId(date),
+    dayId: dateId(date),
     dayOfWeek: date.getDay(),
-    day: date.getDate(),
+    date: date.getDate(),
     isInPast: isInPast(date)
   })
 ) 

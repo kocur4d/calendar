@@ -1,0 +1,5 @@
+.date {
+  margin: 20px 0 5px 20px;
+  padding: 0; }
+  .date.inpast {
+    color: grey; }

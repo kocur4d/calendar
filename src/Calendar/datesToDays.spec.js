@@ -10,13 +10,13 @@ it('converts dates to day objects', () => {
 
   const expected = [
     {
-      id: '2-3',
+      dayId: '2-3',
       dayOfWeek: 6,
       day: 3,
       isInPast: true,
     },
     {
-      id: '2-5',
+      dayId: '2-5',
       dayOfWeek: 6,
       day: 6,
       isInPast: false,
