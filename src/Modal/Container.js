@@ -1,3 +1,4 @@
+import Immutable from 'immutable'
 import { connect } from 'react-redux'
 
 import Modal from './Component.js'
@@ -13,10 +14,10 @@ const mapStateToProps = (state) => {
   const dayId = state.getIn(['modal', 'dayId'])
   const eventId = state.getIn(['modal', 'eventId'])
   const visible = state.getIn(['modal', 'visible'])
+  const events = state.getIn(['events', dayId], Immutable.List())
   const event =
     eventId &&
-    state
-      .getIn(['events', dayId])
+      events
       .find(event => event.get('eventId') === eventId)
       .toJS()
   return ({
@@ -24,6 +25,7 @@ const mapStateToProps = (state) => {
     dayId,
     eventId,
     event,
+    events: events.toJS()
   })
 }
 

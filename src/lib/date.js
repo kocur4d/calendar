@@ -1,9 +1,9 @@
 export const firstDayOfMonth = (date = new Date()) => {
-  return new Date(date.getFullYear(), date.getMonth(), 1, 12)
+  return new Date(date.getFullYear(), date.getMonth(), 1, 23)
 }
 
 export const lastDayOfMonth = (date = new Date()) => {
-  return new Date(date.getFullYear(), date.getMonth() + 1, 0, 12)
+  return new Date(date.getFullYear(), date.getMonth() + 1, 0, 23)
 }
 
 export const startOfWeek = (date = firstDayOfMonth()) => {

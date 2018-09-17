@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import _isEmpty from 'lodash/isEmpty'
 import uuid from 'uuid'
+
+import validate from './validate.js'
 
 import './style.css'
 
@@ -32,12 +33,7 @@ class Modal extends Component {
   }
 
   validate() {
-    return (
-      _isEmpty(this.state.name) || 
-      _isEmpty(this.state.startTime) || 
-      _isEmpty(this.state.endTime) ||
-      parseInt(this.state.startTime, 10) >= parseInt(this.state.endTime, 10)
-    )
+    return validate(Object.assign({}, this.state, {events: this.props.events}))
   }
 
   closeModal() {
@@ -87,9 +83,9 @@ class Modal extends Component {
           <input id='endTime' type='number' value={this.state.endTime} onChange={this.update('endTime')} min={this.state.startTime || 1} max={23}/>
         </section>
         <section>
-          <button className={classNames({hidden: this.props.eventId})} onClick={() => this.onSave()} disabled={this.validate()}>Save</button>
-          <button className={classNames({hidden: !this.props.eventId})} onClick={() => this.onUpdate()} disabled={this.validate()}>Update</button>
-          <button className={classNames({hidden: !this.props.eventId})} onClick={() => this.onDelete()} disabled={this.validate()}>Delete</button>
+          <button className={classNames({hidden: this.props.eventId})} onClick={() => this.onSave()} disabled={!this.validate()}>Save</button>
+          <button className={classNames({hidden: !this.props.eventId})} onClick={() => this.onUpdate()} disabled={!this.validate()}>Update</button>
+          <button className={classNames({hidden: !this.props.eventId})} onClick={() => this.onDelete()}>Delete</button>
           <button onClick={() => this.onCancel()}>Cancel</button>
         </section>
       </div>

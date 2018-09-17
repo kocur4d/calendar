@@ -1,8 +1,8 @@
 import Immutable from 'immutable'
 
-const SAVE_EVENT = 'SAVE_EVENT'
-const UPDATE_EVENT = 'UPDATE_EVENT'
-const DELETE_EVENT = 'DELETE_EVENT'
+export const SAVE_EVENT = 'SAVE_EVENT'
+export const UPDATE_EVENT = 'UPDATE_EVENT'
+export const DELETE_EVENT = 'DELETE_EVENT'
 
 const initialState = Immutable.Map()
 
